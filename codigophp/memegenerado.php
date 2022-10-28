@@ -1,10 +1,9 @@
 <?php
-if(isset($_POST['usuario'])) {
-    $textos = $_POST["textos"];
-    $id = $_POST["id"];
+    $textos = $_GET["textos"];
+    $id = $_GET["id"];
     $arraytextos = array();
     for($x = 1;$x<=$textos;$x++){
-        array_push($arraytextos,array("text" => $_POST("texto$x")));
+        array_push($arraytextos,array("text" => $_POST["texto$x"]));
     }
 
     //url for meme creation
@@ -42,4 +41,3 @@ if(isset($_POST['usuario'])) {
     if ($data["success"]) {
         echo "<img src='" . $data["data"]["url"] . "'>";
     }
-}

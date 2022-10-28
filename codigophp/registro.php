@@ -20,6 +20,7 @@ if(isset($_POST['nombre'])) {
     
     // prepara la sentencia SQL. Le doy un nombre a cada dato del formulario 
     $sql = "INSERT INTO usuario (nombre, contraseña) values (:nombre, :password)";
+
     // asocia valores a esos nombres
     $datos = array("nombre" => $nombre,
                    "password" => $password,

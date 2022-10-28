@@ -13,17 +13,19 @@
     <title>Login</title>
 </head>
 <body>
-<form action="" method="POST">
-    <?php
+<?php
+echo('<form action="memegenerado.php?id='.$id.'&textos='.$textos.'" method="POST">');
     echo("<img width='300px' href='creador.php' src='" . $url . "'>");
     for($x = 1;$x<=$textos;$x++){
         echo('<br><label for="texto'.$x.'">Texto'.$x.': </label>');
-        echo('<input type="text" name="texto$x'.'" id="texto$x'. '">');
+        echo('<input type="text" name="texto'.$x.'" id="texto'.$x.'">');
     }
-    ?>
-    </br>
-        <input type="submit" value="crear">
+    //echo('<input type="hidden" value="$textos">');
+    //echo('<input type="hidden" value="$id">')
+    echo('</br>');
+        echo('<input type="submit" value="crear">');
 
-</form>
+echo('</form>')
+?>
 </body>
 </html>
