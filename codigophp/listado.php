@@ -22,6 +22,6 @@ if($data["success"]) {
     //iterates over memes array
     foreach($data["data"]["memes"] as $meme) {
         //show meme image
-        echo "<a href=# ><img width='80px' src='" . $meme["url"] . "'></a>";
+        echo "<a href=editarmeme.php?textos=$meme[box_count]&url=$meme[url]&id=$meme[id]><img width='80px' src='" . $meme["url"] . "'></a>";
     }
 }
