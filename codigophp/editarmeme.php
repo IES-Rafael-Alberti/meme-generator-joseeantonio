@@ -1,4 +1,6 @@
 <?php
+require ("conecta.php");
+require ("testlogin.php");
     $id = $_GET["id"];
     $url = $_GET["url"];
     $textos = $_GET["textos"];

@@ -13,7 +13,7 @@ require("testlogin.php");
 </head>
 <body>
 <header>
-    <img src="../img/logo.png">
+    <img src="img/logo.png">
     <h1 id="title">MEMES</h1>
     <nav>
         <?php
@@ -51,6 +51,7 @@ require("testlogin.php");
             }
         }
         ?>
+        <a href="listaUsuario.php"><button>Mi listado</button></a>
     </article>
 </section>
 </body>

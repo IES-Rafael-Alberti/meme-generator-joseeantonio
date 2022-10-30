@@ -32,7 +32,7 @@ if(isset($_POST['nombre'])) {
         print("No se pudo dar de alta");
         exit(0);
     }
-    
+    //echo('header("Location: index.php");');
     //print_r($_POST);
     //print_r($_FILES);
     //file_put_contents("fotos/perroooo", file_get_contents($_FILES["foto"]["tmp_name"]));

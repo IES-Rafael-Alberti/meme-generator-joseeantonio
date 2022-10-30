@@ -1,4 +1,6 @@
 <?php
+require ("conecta.php");
+require ("testlogin.php");
     $textos = $_GET["textos"];
     $id = $_GET["id"];
     $arraytextos = array();
@@ -39,5 +41,19 @@
 
     //if success show image
     if ($data["success"]) {
+        //añado meme a la carpeta memes con el nombre creado con las fechas
+        $nameMeme = $_SESSION["usuario"].date("dmyhis").".jpg";
+        file_put_contents("memes/$nameMeme",file_get_contents($data["data"]["url"]));
+        $url=$data["data"]["url"];
         echo "<img src='" . $data["data"]["url"] . "'>";
+
+        $sql="INSERT INTO meme (ruta,id_usuario) VALUES (:ruta,:id_usuario)";
+        $datosSql=array("ruta"=>$nameMeme,
+            "id_usuario"=>$_SESSION['id_usuario']);
+        $stmt= $conn->prepare($sql);
+        if($stmt->execute($datosSql) != 1) {
+            print("No se pudo añadir el meme a la base de datos");
+        }
     }
+    echo("<br>");
+    echo("<a href='listaUsuario.php'><button>Mi listado</button></a>");
