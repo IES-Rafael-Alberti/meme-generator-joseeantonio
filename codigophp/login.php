@@ -37,15 +37,63 @@ if(isset($_POST['usuario'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <style>
+        form{
+            padding: 60px;
+            max-width: 400px;
+            background-color: #E7E7E7;
+            margin: 0 auto;
+        }
+
+        form input, form textarea{
+            margin-bottom: 15px;
+            font-family: "Roboto", sans-serif;
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            color: #525c66;
+            font-size: 1em;
+            resize: none;
+        }
+
+        .botonLogin {
+            display: block;
+            background-color: #0095eb;
+            padding: 10px 45px 10px 45px;
+            border: 0;
+            font-size: 1em;
+            color: 	white;
+            font-family: "Roboto", sans-serif;
+        }
+        .botonLogin: hover{
+            background-color: #046193;
+        }
+        textarea {  resize: none;}
+        .botonRegistro{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: #046193;
+            text-decoration: none;
+            color: white;
+        }
+        h2{
+            display: flex;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body>
-<a href="registro.php"><button>Registrarse</button></a>
+
+<h2>LOGIN</h2>
 <form action="" method="post" enctype="multipart/form-data">
     <label for="usuario">Usuario: </label>
     <input type="text" name="usuario" id="usuario">
     <label for="password">Password: </label>
     <input type="password" name="password" id="password">
-    <input type="submit" value="Login">
+    <input class="botonLogin" type="submit" value="Login">
+    <a class="botonRegistro" href="registro.php">Registrarse</a>
     
 </form>    
 </body>

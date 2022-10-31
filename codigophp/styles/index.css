@@ -1,0 +1,15 @@
+header{
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    text-align: center;
+}
+.logo{
+    max-height: 100px;
+}
+header h1{
+    color: aliceblue;
+}
+nav{
+    color: aliceblue;
+}
