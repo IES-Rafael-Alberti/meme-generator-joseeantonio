@@ -13,3 +13,6 @@ header h1{
 nav{
     color: aliceblue;
 }
+nav a i{
+    color: darkred;
+}
