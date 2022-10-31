@@ -13,6 +13,6 @@ $stmt->execute($datosSql);
 $memes = $stmt->fetchAll();
 
 foreach($memes as $meme){
-    echo("<img width='200px' src='memes/".$meme['ruta']."'>");
+    echo("<img width='200px' src='memes/".$meme['ruta']."?id_meme=".$meme['id_meme']."'>");
 
 }
