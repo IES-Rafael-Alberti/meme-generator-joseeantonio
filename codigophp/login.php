@@ -22,7 +22,7 @@ if(isset($_POST['usuario'])) {
         $_SESSION["usuario"] = $usuario;
         $_SESSION['id_usuario']=$datosUsuario['id_usuario'];
         session_write_close();
-        header("Location: index.php");
+        header("Location: listaUsuario.php");
         exit(0);
     }
     header("Location: login.php");

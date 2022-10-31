@@ -16,9 +16,19 @@ require("conecta.php");
 </head>
 <body>
 <header>
+    <img class="logo" src="img/logo.png">
+    <h1 id="title">MEMES</h1>
+    <nav>
+        <?php
+        print($_SESSION['usuario']);
+        ?>
+        <a href="logout.php"><i class="fa-sharp fa-solid fa-power-off"></i></a>
+    </nav>
 </header>
 
 <main>
+
+
     <?php
 
     $nombre = $_SESSION["usuario"];
@@ -30,6 +40,8 @@ require("conecta.php");
     $stmt->execute($datosSql);
     $memes = $stmt->fetchAll();
 
+    echo ("<a href='index.php'><i class='fa-solid fa-plus'>Añadir meme</i></a>");
+    echo ("<br>");
     foreach($memes as $meme){
         echo("<img width='200px' src='memes/".$meme['ruta']."?id_meme=".$meme['id_meme']."'>");
         echo("<a href='borrarmeme.php?id_meme=".$meme["id_meme"]."' ><i class='fa-solid fa-trash'></i></a>") ;
@@ -37,6 +49,8 @@ require("conecta.php");
     }
 
    ?>
+
+
 </main>
 
 </body>
